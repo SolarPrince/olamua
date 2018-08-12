@@ -1,0 +1,10 @@
+name: Categories
+form: $/dunglh/shop/models/category/fields.yaml
+modelClass: Dunglh\Shop\Models\Category
+defaultRedirect: dunglh/shop/categories
+create:
+    redirect: 'dunglh/shop/categories/update/:id'
+    redirectClose: dunglh/shop/categories
+update:
+    redirect: dunglh/shop/categories
+    redirectClose: dunglh/shop/categories

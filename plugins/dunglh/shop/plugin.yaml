@@ -1,0 +1,20 @@
+plugin:
+    name: 'dunglh.shop::lang.plugin.name'
+    description: 'dunglh.shop::lang.plugin.description'
+    author: dunglh
+    icon: oc-icon-shopping-cart
+    homepage: ''
+navigation:
+    dunglh-shop-menu:
+        label: Shop
+        url: dunglh/shop/products
+        icon: icon-shopping-cart
+        sideMenu:
+            dunglh-shop-products:
+                label: 'Sản phẩm'
+                url: dunglh/shop/products
+                icon: icon-dropbox
+            dunglh-shop-product-categories:
+                label: 'Danh mục sản phẩm'
+                url: dunglh/shop/categories
+                icon: icon-sitemap

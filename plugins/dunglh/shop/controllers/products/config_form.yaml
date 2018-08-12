@@ -1,0 +1,10 @@
+name: Products
+form: $/dunglh/shop/models/product/fields.yaml
+modelClass: Dunglh\Shop\Models\Product
+defaultRedirect: dunglh/shop/products
+create:
+    redirect: 'dunglh/shop/products/update/:id'
+    redirectClose: dunglh/shop/products
+update:
+    redirect: dunglh/shop/products
+    redirectClose: dunglh/shop/products

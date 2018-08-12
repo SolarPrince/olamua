@@ -1,0 +1,4 @@
+title: Categories
+modelClass: Dunglh\Shop\Models\Category
+toolbar:
+    buttons: reorder_toolbar

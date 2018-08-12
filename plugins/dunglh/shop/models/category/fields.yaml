@@ -1,0 +1,28 @@
+fields:
+    name:
+        label: 'Tên danh mục'
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text
+    description:
+        label: 'Mô tả'
+        size: ''
+        span: full
+        type: textarea
+    image:
+        label: 'Ảnh đại diện'
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

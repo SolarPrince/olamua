@@ -1,0 +1,71 @@
+tabs:
+    fields:
+        name:
+            label: 'Tên sản phẩm'
+            span: auto
+            type: text
+            tab: 'Thông tin'
+        slug:
+            label: Slug
+            span: auto
+            preset:
+                field: name
+                type: slug
+            type: text
+            tab: 'Thông tin'
+        description:
+            label: 'Mô tả'
+            size: ''
+            span: full
+            type: richeditor
+            tab: 'Thông tin'
+        price:
+            label: Giá
+            span: auto
+            type: number
+            tab: 'Thông tin'
+        sale_price:
+            label: 'Giá khuyến mãi'
+            span: auto
+            type: number
+            tab: 'Thông tin'
+        is_customizable:
+            label: 'Tự thiết kế'
+            span: auto
+            type: switch
+            tab: 'Thông tin'
+        is_wrappable:
+            label: 'Tùy chọn đóng gói'
+            span: auto
+            type: switch
+            tab: 'Thông tin'
+        is_featured:
+            label: 'Sản phẩm nổi bật'
+            span: auto
+            type: switch
+            tab: 'Thông tin'
+        is_active:
+            label: 'Đang bán'
+            span: auto
+            default: 1
+            type: switch
+            tab: 'Thông tin'
+        categories:
+            label: 'Loại sản phẩm'
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: 'Thông tin'
+        images:
+            label: 'Hình ảnh sản phẩm'
+            mode: image
+            imageWidth: '80'
+            imageHeight: '80'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'Thư viện'

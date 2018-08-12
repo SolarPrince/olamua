@@ -1,0 +1,6 @@
+columns:
+    name:
+        label: 'Tên danh mục'
+        type: text
+        searchable: true
+        sortable: true

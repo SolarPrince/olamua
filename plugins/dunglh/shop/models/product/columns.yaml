@@ -1,0 +1,26 @@
+columns:
+    name:
+        label: 'Tên sản phẩm'
+        type: text
+        searchable: true
+        sortable: true
+    price:
+        label: Giá
+        type: number
+        sortable: true
+    sale_price:
+        label: 'Giá khuyến mãi'
+        type: number
+        sortable: true
+    is_customizable:
+        label: 'Tự thiết kế'
+        type: switch
+    is_wrappable:
+        label: 'Tùy chỉnh đóng gói'
+        type: switch
+    is_featured:
+        label: 'Nổi bật'
+        type: switch
+    is_active:
+        label: 'Đang bán'
+        type: switch

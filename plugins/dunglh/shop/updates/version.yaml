@@ -1,0 +1,11 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table dunglh_shop_products'
+    - builder_table_create_dunglh_shop_products.php
+1.0.3:
+    - 'Created table dunglh_shop_categories'
+    - builder_table_create_dunglh_shop_categories.php
+1.0.4:
+    - 'Created table dunglh_shop_products_categories'
+    - builder_table_create_dunglh_shop_products_categories.php
