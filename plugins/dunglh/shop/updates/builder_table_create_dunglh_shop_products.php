@@ -14,8 +14,8 @@ class BuilderTableCreateDunglhShopProducts extends Migration
             $table->string('name');
             $table->string('slug')->index();
             $table->longText('description')->nullable();
-            $table->double('price', 10, 0)->default(0);
-            $table->double('sale_price', 10, 0)->default(0);
+            $table->double('price', 10, 0)->nullable()->default(0);
+            $table->double('sale_price', 10, 0)->nullable()->default(0);
             $table->boolean('is_customizable')->default(0);
             $table->boolean('is_wrappable')->default(0);
             $table->boolean('is_featured')->default(0);

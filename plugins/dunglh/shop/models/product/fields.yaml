@@ -22,11 +22,13 @@ tabs:
         price:
             label: Giá
             span: auto
+            default: '0'
             type: number
             tab: 'Thông tin'
         sale_price:
             label: 'Giá khuyến mãi'
             span: auto
+            default: '0'
             type: number
             tab: 'Thông tin'
         is_customizable:

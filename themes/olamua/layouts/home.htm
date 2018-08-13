@@ -1,0 +1,15 @@
+[staticPage]
+useContent = 1
+default = 0
+
+[slider]
+slide_show_id = 1
+==
+{% partial 'StaticHeader' %}
+<div class="page-header page-header-small">
+   {% component 'slider' %}
+</div>
+<section id="layout-content">
+   {% component 'staticPage' %}
+</section>
+{% partial 'Footer' %}
