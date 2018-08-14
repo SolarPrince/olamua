@@ -6,9 +6,13 @@ class Plugin extends PluginBase
 {
     public function registerComponents()
     {
+    	return [
+    		'Dunglh\Shop\Components\Products' => 'products'
+    	];
     }
 
     public function registerSettings()
     {
+    	
     }
 }

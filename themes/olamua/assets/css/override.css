@@ -1,0 +1,9 @@
+#homeSlideshow{
+    height: 100%;
+}
+
+.slide-image{
+    height: 100vh;
+    max-height: 600px;
+    background-size: cover;
+}

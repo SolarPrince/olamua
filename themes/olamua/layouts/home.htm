@@ -1,11 +1,7 @@
 [staticPage]
 useContent = 1
 default = 0
-
-[slider]
-slide_show_id = 1
 ==
-
 {repeater name="slideshow" prompt="Thêm slide" tab="Slideshow"}
     {variable name="image" label="Hình ảnh" type="mediafinder" mode="image"}{/variable}
     {variable name="title" type="text" label="Tiêu đề"}Caption{/variable}
@@ -14,10 +10,43 @@ slide_show_id = 1
 {/repeater}
 
 {% partial 'StaticHeader' %}
-<div class="page-header page-header-small">
-   
+<div class="page-header">
+    <div id="homeSlideshow" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        {% for key in slideshow|keys %}
+            {% if key == 0 %}
+            <li data-target="#homeSlideshow" data-slide-to="{{key}}" class="active"></li>
+            {% else %}
+            <li data-target="#homeSlideshow" data-slide-to="{{key}}"></li>
+            {% endif %}
+        {% endfor %}
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        {% for key, slide in slideshow %}
+            {% set activeClass = key==0?"active":"" %}
+            <div class="carousel-item {{activeClass}}">
+                <a href="{{slide.link}}">
+                    <div class="slide-image" style="background-image: url({{slide.image|media}})">
+                        {% if (slide.title != "") or (slide.content != "") %}
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>{{slide.title}}</h5>
+                            <p>{{slide.content}}</p>
+                        </div>
+                        {% endif %}
+                    </div>
+              </a>
+            </div>
+        {% endfor %}
+      </div>
+      <a class="carousel-control-prev" href="#homeSlideshow" role="button" data-slide="prev">
+        <i class="now-ui-icons arrows-1_minimal-left"></i>
+      </a>
+      <a class="carousel-control-next" href="#homeSlideshow" role="button" data-slide="next">
+        <i class="now-ui-icons arrows-1_minimal-right"></i>
+      </a>
+    </div>
 </div>
 <section id="layout-content">
-   {% component 'staticPage' %}
+   {% page %}
 </section>
 {% partial 'Footer' %}
