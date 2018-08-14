@@ -1,6 +1,7 @@
 <?php namespace Dunglh\Shop\Components;
 
 use Cms\Classes\ComponentBase;
+use Cms\Classes\Page;
 use Dunglh\Shop\Models\Product as Product;
 use Dunglh\Shop\Models\Category as ProductCategory;
 
@@ -172,9 +173,9 @@ class Products extends ComponentBase
         ]);
 
         /*
-         * Add a "url" helper attribute for linking to each post and category
+         * Add a "url" helper attribute for linking to each product and category
          */
-        $products->each(function($post) {
+        $products->each(function($products) {
             $products->setUrl($this->productPage, $this->controller);
 
             $products->categories->each(function($category) {
@@ -191,7 +192,7 @@ class Products extends ComponentBase
             return null;
         }
 
-        $category = new BlogCategory;
+        $category = new ProductCategory;
 
         $category = $category->isClassExtendedWith('RainLab.Translate.Behaviors.TranslatableModel')
             ? $category->transWhere('slug', $slug)

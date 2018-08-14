@@ -29,6 +29,7 @@ tabs:
             label: 'Giá khuyến mãi'
             span: auto
             default: '0'
+            defaultFrom: price
             type: number
             tab: 'Thông tin'
         is_customizable:

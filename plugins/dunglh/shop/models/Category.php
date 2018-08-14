@@ -23,4 +23,19 @@ class Category extends Model
     public $attachOne = [
         'image' => 'System\Models\File'
     ];
+
+    /**
+     * Sets the "url" attribute with a URL to this object
+     * @param string $pageName
+     * @param Cms\Classes\Controller $controller
+     */
+    public function setUrl($pageName, $controller)
+    {
+        $params = [
+            'id'   => $this->id,
+            'slug' => $this->slug,
+        ];
+
+        return $this->url = $controller->pageUrl($pageName, $params);
+    }
 }

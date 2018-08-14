@@ -43,4 +43,103 @@ class Product extends Model
     public $attachMany = [
         'images' => 'System\Models\File'
     ];
+
+    /**
+     * Lists posts for the front end
+     *
+     * @param        $query
+     * @param  array $options Display options
+     *
+     * @return Post
+     */
+    public function scopeListFrontEnd($query, $options)
+    {
+        /*
+         * Default options
+         */
+        extract(array_merge([
+            'page'       => 1,
+            'perPage'    => 10,
+            'sort'       => 'created_at',
+            'categories' => null,
+            'category'   => null,
+            'search'     => '',
+            'is_active'  => true,
+        ], $options));
+
+        $searchableFields = ['title', 'slug', 'description'];
+
+        /*
+         * Sorting
+         */
+        if (!is_array($sort)) {
+            $sort = [$sort];
+        }
+
+        foreach ($sort as $_sort) {
+
+            if (in_array($_sort, array_keys(self::$allowedSortingOptions))) {
+                $parts = explode(' ', $_sort);
+                if (count($parts) < 2) {
+                    array_push($parts, 'desc');
+                }
+                list($sortField, $sortDirection) = $parts;
+                if ($sortField == 'random') {
+                    $sortField = Db::raw('RAND()');
+                }
+                $query->orderBy($sortField, $sortDirection);
+            }
+        }
+
+        /*
+         * Search
+         */
+        $search = trim($search);
+        if (strlen($search)) {
+            $query->searchWhere($search, $searchableFields);
+        }
+
+        /*
+         * Categories
+         */
+        if ($categories !== null) {
+            if (!is_array($categories)) $categories = [$categories];
+            $query->whereHas('categories', function($q) use ($categories) {
+                $q->whereIn('id', $categories);
+            });
+        }
+
+        /*
+         * Category, including children
+         */
+        if ($category !== null) {
+            $category = Category::find($category);
+
+            $categories = $category->getAllChildrenAndSelf()->lists('id');
+            $query->whereHas('categories', function($q) use ($categories) {
+                $q->whereIn('id', $categories);
+            });
+        }
+
+        return $query->paginate($perPage, $page);
+    }
+
+    /**
+     * Sets the "url" attribute with a URL to this object
+     * @param string $pageName
+     * @param Cms\Classes\Controller $controller
+     */
+    public function setUrl($pageName, $controller)
+    {
+        $params = [
+            'id'   => $this->id,
+            'slug' => $this->slug,
+        ];
+
+        if (array_key_exists('categories', $this->getRelations())) {
+            $params['category'] = $this->categories->count() ? $this->categories->first()->slug : null;
+        }
+
+        return $this->url = $controller->pageUrl($pageName, $params);
+    }
 }

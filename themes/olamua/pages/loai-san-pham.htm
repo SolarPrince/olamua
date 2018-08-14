@@ -1,0 +1,31 @@
+title = "Loại sản phẩm"
+url = "/loai-san-pham/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[products]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "Không có sản phẩm nào được tìm thấy"
+sortOrder = "created_at desc"
+categoryPage = "loai-san-pham"
+postPage = "loai-san-pham"
+==
+<div class="page-header page-header-small">
+    <div class="page-header-image" data-parallax="true" style="background-image: url('{{category.banner.path}}');">
+    </div>
+    <div class="container">
+        <div class="content-center">
+            <h1 class="title">{{category.name}}</h1>
+            <div class="text-center">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<section id="layout-content">
+{% component 'products' %}
+</section>
