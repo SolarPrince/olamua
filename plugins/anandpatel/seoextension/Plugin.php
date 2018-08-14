@@ -96,12 +96,12 @@ class Plugin extends PluginBase
     }
 
 
-    public function register()
+    public function boot()
     {
 
         \Event::listen('backend.form.extendFields', function($widget)
         {
-
+            if($widget->isNested) return;
             if(PluginManager::instance()->hasPlugin('RainLab.Pages') && $widget->model instanceof \RainLab\Pages\Classes\Page)
             {
                 $widget->addFields([
@@ -154,7 +154,8 @@ class Plugin extends PluginBase
                 ],
                 'primary');
             }
-
+            //var_dump($widget->tabs);
+            
             if(PluginManager::instance()->hasPlugin('RainLab.Blog') && $widget->model instanceof \RainLab\Blog\Models\Post)
             {
                 $widget->addFields([
@@ -255,7 +256,9 @@ class Plugin extends PluginBase
                 ],
                 'primary'
             );
+            
         });
+        
     }
 
 

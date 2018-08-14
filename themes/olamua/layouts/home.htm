@@ -5,9 +5,17 @@ default = 0
 [slider]
 slide_show_id = 1
 ==
+
+{repeater name="slideshow" prompt="Thêm slide" tab="Slideshow"}
+    {variable name="image" label="Hình ảnh" type="mediafinder" mode="image"}{/variable}
+    {variable name="title" type="text" label="Tiêu đề"}Caption{/variable}
+    {variable name="content" type="textarea" label="Nội dung"}Body{/variable}
+    {variable name="link" type="text" label="Liên kết"}{/variable}
+{/repeater}
+
 {% partial 'StaticHeader' %}
 <div class="page-header page-header-small">
-   {% component 'slider' %}
+   
 </div>
 <section id="layout-content">
    {% component 'staticPage' %}
