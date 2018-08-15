@@ -1,5 +1,9 @@
-<ul>
-{% for product in products %}
-<li>{{product.name}}</li>
-{% endfor %}
-</ul>
+<div class="container">
+    <div class="row">
+        {% for product in products %}
+            <div class="col-4">
+            {% partial '@product-itm' product=product %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

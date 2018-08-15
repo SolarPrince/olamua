@@ -12,7 +12,7 @@ postsPerPage = 10
 noPostsMessage = "Không có sản phẩm nào được tìm thấy"
 sortOrder = "created_at desc"
 categoryPage = "loai-san-pham"
-postPage = "loai-san-pham"
+productPage = "san-pham"
 ==
 <div class="page-header page-header-small">
     <div class="page-header-image" data-parallax="true" style="background-image: url('{{category.banner.path}}');">
@@ -26,6 +26,6 @@ postPage = "loai-san-pham"
         </div>
     </div>
 </div>
-<section id="layout-content">
+<div class="section product-category">
 {% component 'products' %}
-</section>
+</div>

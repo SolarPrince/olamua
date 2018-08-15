@@ -15,8 +15,8 @@ fields:
         size: ''
         span: full
         type: textarea
-    image:
-        label: 'Ảnh đại diện'
+    banner:
+        label: Banner
         mode: image
         imageWidth: '100'
         imageHeight: '100'

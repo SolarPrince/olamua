@@ -21,7 +21,7 @@ class Category extends Model
      */
     public $table = 'dunglh_shop_categories';
     public $attachOne = [
-        'image' => 'System\Models\File'
+        'banner' => 'System\Models\File'
     ];
 
     /**

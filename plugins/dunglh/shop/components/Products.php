@@ -99,7 +99,7 @@ class Products extends ComponentBase
                 'default'     => 'danh-muc',
                 'group'       => 'Links',
             ],
-            'postPage' => [
+            'productPage' => [
                 'title'       => 'Trang chi tiết sản phẩm',
                 'description' => 'Dùng hiển thị links',
                 'type'        => 'dropdown',
@@ -114,7 +114,7 @@ class Products extends ComponentBase
         return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
     }
 
-    public function getPostPageOptions()
+    public function getProductPageOptions()
     {
         return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
     }
