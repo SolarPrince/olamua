@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 product-images">
+            {% for image in product.images %}
+                <img src="{{image.path}}" />
+            {% endfor %}
+        </div>
+        <div class="col-6 product-meta">
+            <h2>{{product.name}}</h2>
+            <div class="price">
+                {% if product.price > product.sale_price %}
+                <del>{{product.price | number_format(0, ',', '.') }}đ</del> 
+                {% endif %}
+                {{product.sale_price | number_format(0, ',', '.') }}đ
+            </div>
+        </div>
+        <div class="col-12 product-tabs">
+            <div class="card card-nav-tabs">
+                <div class="card-header card-header-primary">
+                    <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+                    <div class="nav-tabs-navigation">
+                        <div class="nav-tabs-wrapper">
+                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#description" data-toggle="tab">Mô tả</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><div class="card-body ">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="description">
+                            {{product.description|raw}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,7 +7,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
     	return [
-    		'Dunglh\Shop\Components\Products' => 'products'
+            'Dunglh\Shop\Components\Products' => 'products',
+            'Dunglh\Shop\Components\Product' => 'product'
     	];
     }
 

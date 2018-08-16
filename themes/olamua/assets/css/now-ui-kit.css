@@ -5014,6 +5014,11 @@ Created using IcoMoon - icomoon.io
     min-height: 190px;
 }
 
+.card .card-footer, .card .card-header {
+    background-color: transparent;
+    padding: 0;
+}
+
 .card[data-background-color="orange"] {
     background-color: #f96332;
 }

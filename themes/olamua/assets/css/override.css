@@ -11,3 +11,13 @@
 .page-header{
     margin-top: 60px;
 }
+
+.product-tabs{
+    margin-top: 30px;
+}
+
+.card-header-primary .nav-tabs>.nav-item>.nav-link.active{
+    background-color: #f96332;
+    border-color: #f96332;
+    color: #fff;
+}
