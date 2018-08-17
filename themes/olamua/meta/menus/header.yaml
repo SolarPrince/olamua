@@ -1,0 +1,64 @@
+name: header
+items:
+    -
+        title: 'Trang chủ'
+        nesting: '0'
+        type: static-page
+        url: ''
+        code: ''
+        reference: index
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Hoa
+        nesting: '0'
+        type: product-category
+        code: ''
+        reference: '1'
+        cmsPage: loai-san-pham
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Quà lưu niệm'
+        nesting: '0'
+        type: product-category
+        code: ''
+        reference: '2'
+        cmsPage: loai-san-pham
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'Gấu bông'
+                nesting: '0'
+                type: product-category
+                code: ''
+                reference: '4'
+                cmsPage: loai-san-pham
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: Thiệp
+        nesting: '0'
+        type: product-category
+        code: ''
+        reference: '3'
+        cmsPage: loai-san-pham
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

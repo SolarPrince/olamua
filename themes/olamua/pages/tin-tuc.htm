@@ -1,0 +1,17 @@
+title = "Tin tức"
+url = "/tin-tuc/danh-muc/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "tin-tuc"
+postPage = "loai-san-pham"
+==
+{% component 'blogPosts2' %}
