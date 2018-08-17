@@ -1,6 +1,7 @@
 <?php namespace Dunglh\Shop\Models;
 
 use Model;
+use URL;
 use Cms\Classes\Page as CmsPage;
 use Cms\Classes\Theme;
 
@@ -171,6 +172,7 @@ class Category extends Model
             $result['url'] = $pageUrl;
             $result['isActive'] = $pageUrl == $url;
             $result['mtime'] = $category->updated_at;
+            $result['code'] = 'mnu-pc-'.$category->id;
 
             if ($item->nesting) {
                 $categories = $category->getNested();

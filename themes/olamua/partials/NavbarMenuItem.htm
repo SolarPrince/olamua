@@ -1,0 +1,18 @@
+[viewBag]
+==
+{% for item in items if not item.viewBag.isHidden %}
+        {% if item.items %}
+        <li role="presentation" class="nav-item dropdown {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }}">
+            <a class="nav-link dropdown-toggle {{extraClass}}" href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} id="dropdown-{{item.code}}" data-toggle="dropdown">
+                {{ item.title }}
+            </a>
+             <ul class="dropdown-menu" aria-labelledby="dropdown-{{item.code}}">{% partial 'NavbarMenuItem' items=item.items extraClass='dropdown-item' %}</ul>
+        </li>
+        {% else %}
+        <li role="presentation" class="nav-item {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }}">
+            <a class="nav-link {{extraClass}}" href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
+                {{ item.title }}
+            </a>
+        </li>
+        {% endif %}
+{% endfor %}

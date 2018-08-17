@@ -4,10 +4,8 @@ items:
         title: 'Trang chủ'
         nesting: '0'
         type: static-page
-        url: ''
-        code: ''
+        code: mnu-home
         reference: index
-        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -17,7 +15,7 @@ items:
         title: Hoa
         nesting: '0'
         type: product-category
-        code: ''
+        code: mnu-pc-hoa
         reference: '1'
         cmsPage: loai-san-pham
         replace: '0'
@@ -29,7 +27,7 @@ items:
         title: 'Quà lưu niệm'
         nesting: '0'
         type: product-category
-        code: ''
+        code: mnu-pc-qua-luu-niem
         reference: '2'
         cmsPage: loai-san-pham
         replace: '0'
@@ -42,7 +40,7 @@ items:
                 title: 'Gấu bông'
                 nesting: '0'
                 type: product-category
-                code: ''
+                code: mnu-pc-gau-bong
                 reference: '4'
                 cmsPage: loai-san-pham
                 replace: '0'
@@ -54,7 +52,7 @@ items:
         title: Thiệp
         nesting: '0'
         type: product-category
-        code: ''
+        code: mnu-pc-thiep
         reference: '3'
         cmsPage: loai-san-pham
         replace: '0'

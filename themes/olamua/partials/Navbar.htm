@@ -1,0 +1,34 @@
+[viewBag]
+
+[staticMenu]
+code = "header"
+==
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top" color-on-scroll="400">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="http://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Quà tặng hay, mua liền tay" data-placement="bottom" target="_blank">
+                    Ola!Mua!
+                </a>
+                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="{{ 'blurred-image-1.jpg' | theme }}">
+                {% if staticMenu.menuItems %}
+                    <ul class="navbar-nav">
+                        {% partial "NavbarMenuItem" items=staticMenu.menuItems %}
+                        <li class="nav-item">
+                            <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+                                <i class="fa fa-instagram"></i>
+                                <p class="d-lg-none d-xl-none">Instagram</p>
+                            </a>
+                        </li>
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->

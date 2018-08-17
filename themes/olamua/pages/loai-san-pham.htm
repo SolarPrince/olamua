@@ -13,6 +13,8 @@ noPostsMessage = "Không có sản phẩm nào được tìm thấy"
 sortOrder = "created_at desc"
 categoryPage = "loai-san-pham"
 productPage = "san-pham"
+
+[staticBreadcrumbs]
 ==
 <div class="page-header page-header-small">
     <div class="page-header-image" data-parallax="true" style="background-image: url('{{category.banner.path}}');">
@@ -21,7 +23,7 @@ productPage = "san-pham"
         <div class="content-center">
             <h1 class="title">{{category.name}}</h1>
             <div class="text-center">
-                
+                {% component 'staticBreadcrumbs' %}
             </div>
         </div>
     </div>
