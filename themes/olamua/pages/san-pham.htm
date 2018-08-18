@@ -8,6 +8,13 @@ robot_follow = "follow"
 [product]
 slug = "{{ :slug }}"
 categoryPage = "loai-san-pham"
+
+[shopBreadcrumbs]
+categoryPage = "loai-san-pham"
+productPage = "san-pham"
+slug = "{{ :slug }}"
+currentPage = "san-pham"
+homeText = "Trang chủ"
 ==
 <div class="page-header page-header-small">
     <div class="page-header-image" data-parallax="true" style="background-image: url('{{product.images[0].path}}');">
@@ -16,7 +23,7 @@ categoryPage = "loai-san-pham"
         <div class="content-center">
             <h1 class="title">{{product.name}}</h1>
             <div class="text-center">
-                
+                {% component 'shopBreadcrumbs' %}
             </div>
         </div>
     </div>

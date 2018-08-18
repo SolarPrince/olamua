@@ -177,7 +177,8 @@ class Products extends ComponentBase
          */
         $products->each(function($products) {
             $products->setUrl($this->productPage, $this->controller);
-
+            $products->setDisplayPrice();
+            
             $products->categories->each(function($category) {
                 $category->setUrl($this->categoryPage, $this->controller);
             });

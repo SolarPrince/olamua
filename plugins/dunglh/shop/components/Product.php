@@ -70,7 +70,7 @@ class Product extends ComponentBase
             : $product->where('slug', $slug);
 
         $product = $product->first();
-
+        $product->setDisplayPrice();
         /*
          * Add a "url" helper attribute for linking to each category
          */

@@ -8,10 +8,7 @@
         <div class="col-6 product-meta">
             <h2>{{product.name}}</h2>
             <div class="price">
-                {% if product.price > product.sale_price %}
-                <del>{{product.price | number_format(0, ',', '.') }}đ</del> 
-                {% endif %}
-                {{product.sale_price | number_format(0, ',', '.') }}đ
+                {{product.display_price|raw}}
             </div>
         </div>
         <div class="col-12 product-tabs">

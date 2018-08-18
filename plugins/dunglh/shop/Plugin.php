@@ -10,7 +10,8 @@ class Plugin extends PluginBase
     {
     	return [
             'Dunglh\Shop\Components\Products' => 'products',
-            'Dunglh\Shop\Components\Product' => 'product'
+            'Dunglh\Shop\Components\Product' => 'product',
+            'Dunglh\Shop\Components\ShopBreadcrumbs' => 'shopBreadcrumbs'
     	];
     }
 

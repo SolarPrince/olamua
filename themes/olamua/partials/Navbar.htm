@@ -4,7 +4,7 @@
 code = "header"
 ==
 <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top" color-on-scroll="400">
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top">
         <div class="container">
             <div class="navbar-translate">
                 <a class="navbar-brand" href="http://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Quà tặng hay, mua liền tay" data-placement="bottom" target="_blank">
@@ -21,9 +21,10 @@ code = "header"
                     <ul class="navbar-nav">
                         {% partial "NavbarMenuItem" items=staticMenu.menuItems %}
                         <li class="nav-item">
-                            <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-                                <i class="fa fa-instagram"></i>
-                                <p class="d-lg-none d-xl-none">Instagram</p>
+                            <a class="nav-link icons" rel="tooltip" title="Giỏ hàng" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+                                <span 
+                                <i data-count="0" class="fa fa-2x fa-shopping-cart icon-badge"></i>
+                                <p class="d-lg-none d-xl-none">Giỏ hàng</p>
                             </a>
                         </li>
                     </ul>

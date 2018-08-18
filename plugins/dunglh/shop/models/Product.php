@@ -1,7 +1,7 @@
 <?php namespace Dunglh\Shop\Models;
 
 use Model;
-
+use Dunglh\Shop\Classes\Helper as Helper;
 /**
  * Model
  */
@@ -141,5 +141,18 @@ class Product extends Model
         }
 
         return $this->url = $controller->pageUrl($pageName, $params);
+    }
+
+    /**
+     * Set display price and sale
+     */
+    public function setDisplayPrice(){
+        if($this->price > $this->sale_price && $this->sale_price > 0){
+            $this->onSale = true;
+            $this->display_price = '<del>'.Helper::vnNumberFormat($this->price).'đ</del> '.Helper::vnNumberFormat($this->sale_price).'đ';
+        } else {
+            $this->onSale = false;
+            $this->display_price = Helper::vnNumberFormat($this->price).'đ';
+        }
     }
 }
